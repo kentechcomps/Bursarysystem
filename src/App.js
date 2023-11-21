@@ -8,6 +8,7 @@ import Contactus from './Components/Contactus';
 import Home from './Components/Home';
 import AdminLogin from './Components/AdminLogin';
 import Secondaryschool from './Components/Secondaryschool';
+import Tertiary from './Components/Tertiaryschool';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Contactus" element={<Contactus />} />
           <Route path="/Adminlogin" element={<AdminLogin/>} />
           <Route path='/Secondaryschoolapplication' element={<Secondaryschool/>}/>
+          <Route path='/Tertiary' element={<Tertiary/>}/>
           </Routes>
       </BrowserRouter>
     </div>

@@ -21,7 +21,12 @@ const Secondaryschool = ()=>{
             'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
         }}
       >
-        <h2>Carefully Fill in the form</h2>
+       <div style={{
+      width:'100%',
+      backgroundColor:'grey'
+    }}>
+    <h2>Fill in the form</h2>
+    </div>
   
         <Form.Group className="mb-3" style={{ width: '80%', margin: 'auto' }}>
           <Form.Label>Fullname</Form.Label>

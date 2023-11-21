@@ -5,11 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 const BursaryApplication = () => {
   const navigate = useNavigate();
 
-  const click = ()=>{
-
+  const onclicksecondary = ()=>{
   navigate('/Secondaryschoolapplication')
-
   }
+  const onclicktertiary = ()=>{
+    navigate('/Tertiary')
+    }
+
   return (
     <div>
       <h1
@@ -51,7 +53,7 @@ const BursaryApplication = () => {
           width: '150px',
           fontStyle: 'bold'
         }}
-        onClick = {click}
+        onClick ={onclicksecondary}
         >Apply</a>
       </div>
     </div>
@@ -78,6 +80,7 @@ const BursaryApplication = () => {
           width: '150px',
           fontStyle: 'bold'
         }}
+        onClick ={onclicktertiary}
         >Apply</a>
       </div>
     </div>
