@@ -9,9 +9,10 @@ import './Navbar.css'; // Import a CSS file for custom styles
 const NavigationBar = () => {
  
   return (
-    <Navbar bg="light" data-bs-theme="light" style={{
+    <Navbar className="navbar-sticky" bg="light" data-bs-theme="light" style={{
       marginLeft: '0px'
-    }}>
+     
+    }}  >
       <Container>
         <Navbar.Brand href="#home">MASINGA CONSTITUENCY</Navbar.Brand>
         <Nav className="me-auto">
@@ -42,6 +43,13 @@ const NavigationBar = () => {
         </Nav>
         <Nav>
           <Nav.Link>
+            <NavLink to="/Studentlogin" style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <FontAwesomeIcon icon={faUser} /> Student Login
+            </NavLink>
+          </Nav.Link>
+          <Nav.Link>
+
             <NavLink to="/Adminlogin" style={{ textDecoration: 'none', color: 'black' }}
             >
               <FontAwesomeIcon icon={faUser} /> Admin Login

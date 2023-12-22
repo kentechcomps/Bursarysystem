@@ -23,9 +23,11 @@ const Secondaryschool = ()=>{
       >
        <div style={{
       width:'100%',
-      backgroundColor:'grey'
+      backgroundColor:'#154c79'
     }}>
-    <h2>Fill in the form</h2>
+    <h2  style={{
+      color:'white'
+    }}>Fill in the form</h2>
     </div>
   
         <Form.Group className="mb-3" style={{ width: '80%', margin: 'auto' }}>

@@ -10,7 +10,7 @@ import './carossel.css'
 function Home() {
   return (
     <>
-    <Marquee/>
+    {/* <Marquee/> */}
      <ControlledCarousel/>
     <Footer
     />

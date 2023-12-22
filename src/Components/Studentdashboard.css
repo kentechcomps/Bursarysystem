@@ -1,0 +1,43 @@
+
+.tablediv {
+    width: fit-content; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #application th #myicon :hover {
+    cursor: pointer;
+  }
+  #application th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(125, 165, 189);
+    color: white;
+  }
+  #application {
+    margin-top: 50px;
+  }
+  #application tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  #application td,
+  #application th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .download-table-xls-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .download-table-xls-button:hover {
+    background-color: #45a049;
+  }

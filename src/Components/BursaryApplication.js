@@ -18,11 +18,12 @@ const BursaryApplication = () => {
         style={{
           textAlign: "center",
           fontFamily: "cursive",
+          fontStyle:"bold" ,
           margin: "4rem",
           fontStyle: "italic",
         }}
       >
-    coutesy of Honourable Joshua Mbithi Mwalyo
+    Coutersy of Honourable Joshua Mbithi Mwalyo
       </h1>
       <div className="row" 
       style={

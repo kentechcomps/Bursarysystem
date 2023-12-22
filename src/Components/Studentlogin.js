@@ -1,5 +1,6 @@
+
 import React , {useState} from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -7,18 +8,19 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
 
-function AdminLogin({setnationalid}) {
+function StudentLogin({setRole , setnationalid}) {
   const history = useNavigate()
+
+
   const [formData, setFormData] = useState({
-    Phonenumber: "",
-    password: ""
+    Nationalid: "", // State for the Remember Me checkbox
   });
   const handleSubmit = (event) => {
     event.preventDefault();
     
     // TODO: Submit form data to backend
    
-    fetch("http://127.0.0.1:5000/bursarymanagement/loginadmin", {
+    fetch("http://127.0.0.1:5000/bursarymanagement/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,14 +36,15 @@ function AdminLogin({setnationalid}) {
       .then((data) => {
         console.log("Response data:", data);
         console.log(data.nationalid)
+        history("/Studentdashboard")
         Swal.fire({
           title: "Login",
           text: "Login Successful!",
           icon: "success"
         });
-        history("/Admindashboard")
-       
-        setnationalid(data.nationalid);
+        
+        setRole(data.Role)
+        setnationalid(data.id);
       })
       .catch((response) => {
         console.error("Error:", response.message);
@@ -55,7 +58,6 @@ function AdminLogin({setnationalid}) {
 
    
   };
-
 
   return (
     <Form
@@ -73,24 +75,18 @@ function AdminLogin({setnationalid}) {
       <h2>Kindly Login</h2>
 
       <Form.Group className="mb-3" style={{ width: '80%', margin: 'auto' }}>
-        <Form.Label>Phonenumber</Form.Label>
-        <Form.Control type="text" placeholder="Phonenumber"  onChange={(event) => {
-                      setFormData({ ...formData, Phonenumber: event.target.value });}}/>
+        <Form.Label>Id.No</Form.Label>
+        <Form.Control type="text" placeholder="idnumber"  onChange={(event) => {
+                      setFormData({ ...formData, Nationalid: event.target.value });
+                 }}/>
       </Form.Group>
-
-      <Form.Group className="mb-3" style={{ width: '80%', margin: 'auto' }}>
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password"  onChange={(event) => {
-                      setFormData({ ...formData, password: event.target.value });}}/>
-      </Form.Group>
-
       <Form.Group className="mb-3">
-        <Button type="submit" style={{ background: '#154c79', width: '50%', margin: 'auto' }} onClick={handleSubmit}> 
-          Sign in
+        <Button type="submit" style={{ background: '#154c79', width: '50%', margin: 'auto' }} onClick={handleSubmit}>
+          Login in
         </Button>
       </Form.Group>
     </Form>
   );
 }
 
-export default AdminLogin;
+export default StudentLogin
